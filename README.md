@@ -26,7 +26,9 @@ $ ionic cordova run ios
 
 Substitute ios for android if not on a Mac.
 
-# Uygulama 
+# Ionic Projesi Ornegi
+
+https://github.com/matiastucci/ionic-ocr-example
 
 # Heroku
   Heroku da canli olarak uygulamayi gorebiliyoruz.
