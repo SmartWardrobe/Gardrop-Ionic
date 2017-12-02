@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-navbar>
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    <ion-title>GARDROP</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+<ion-content class="background">
+  <ion-card>
+    <ion-card-header>
+     Kullanıcı Kaydı
+    </ion-card-header>
+    <ion-card-content>
+     <!-- <b>{{data.response}}</b> -->
+      <ion-list no-line>
+        <ion-item>
+          <ion-input [(ngModel)]="data.username" name="username" type="text" placeholder="Kullanıcı Adı"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input [(ngModel)]="data.fullname" name="fullname" type="text" placeholder="Ad Soyad"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input [(ngModel)]="data.email" name="email" type="text" placeholder="Email"></ion-input>
+        </ion-item>      
+        <ion-item>
+          <ion-input [(ngModel)]="data.password" name="password" type="password" placeholder="Parola"></ion-input>
+        </ion-item>
+        <button ion-button block color="blue" (click)="register()">Kayit ol</button>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+
