@@ -15,6 +15,7 @@ import 'rxjs/Rx';
 
 export class SignupPage {
   data:any = {};
+  items : any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public http: Http) {
     this.data.username = '';
@@ -41,12 +42,11 @@ export class SignupPage {
     console.log(myData);
     this.http.post(link,myData,options)
       .subscribe(data => {
-        this.data.response = data["_body"]; 
+        this.data.response = data["_body"]; //json donuyor
       }, error => {
         console.log("Oooops!");
       });
+      return this.items
     }
-  //ionViewDidLoad() {
-    //console.log('ionViewDidLoad SignupPage');
-  //}
+
 }

@@ -14,7 +14,7 @@
      Kullanıcı Kaydı
     </ion-card-header>
     <ion-card-content>
-     <!-- <b>{{data.response}}</b> -->
+      
       <ion-list no-line>
         <ion-item>
           <ion-input [(ngModel)]="data.username" name="username" type="text" placeholder="Kullanıcı Adı"></ion-input>
@@ -31,6 +31,7 @@
         <button ion-button block color="blue" (click)="register()">Kayit ol</button>
       </ion-list>
     </ion-card-content>
+    <b>{{data.response}}</b>      
   </ion-card>
 </ion-content>
 
