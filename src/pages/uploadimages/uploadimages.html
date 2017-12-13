@@ -1,0 +1,43 @@
+<!--
+  Galeri ikonu -> ion-images
+  Foto Cekme ikonu -> ion-camera
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Gardrob'um</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <img src="{{pathForImage(lastImage)}}" style="width: 100%" [hidden]="lastImage === null">
+  <h3 [hidden]="lastImage !== null">Please Select Image!</h3>
+</ion-content>
+
+
+
+<ion-footer>
+  <ion-toolbar color="light">
+    <ion-list>
+    <ion-buttons end>
+      <button ion-button icon-left (click)="takePicture()" >
+        <ion-icon name="camera" ></ion-icon>Kamera ile Ekle
+      </button>
+    </ion-buttons>
+    <ion-buttons end>
+      <button ion-button icon-left  [disabled]="lastImage === null">
+        <ion-icon name="images"></ion-icon>Galeriden Ekle
+      </button>
+    </ion-buttons>
+    <ion-buttons end>
+      <button ion-button icon-left (click)="uploadFile()" [disabled]="lastImage === null">
+        <ion-icon name="cloud-upload"></ion-icon>Upload
+      </button>
+    </ion-buttons>
+  </ion-list>
+      
+    
+  </ion-toolbar>
+</ion-footer>

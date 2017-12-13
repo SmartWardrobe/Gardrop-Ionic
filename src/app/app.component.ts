@@ -7,7 +7,8 @@ import { WelcomePage } from '../pages/welcome/welcome';
 import { ListPage } from '../pages/list/list';
 import { RequestsPage } from '../pages/requests/requests';
 import { LoginPage } from  '../pages/login/login';
-import { SignupPage } from '../pages/signup/signup'
+import { SignupPage } from '../pages/signup/signup';
+import { UploadimagesPage } from '../pages/uploadimages/uploadimages';
 
 @Component({
   templateUrl: 'app.html'
@@ -28,7 +29,8 @@ export class MyApp {
       { title: 'List', component: ListPage },
       { title: 'Requests', component: RequestsPage},
       { title: 'Login', component: LoginPage },
-      { title: 'Signup', component: SignupPage }
+      { title: 'Signup', component: SignupPage },
+      { title: 'Upload Dress', component: UploadimagesPage}
     ];
 
   }

@@ -9,9 +9,14 @@ import { ListPage } from '../pages/list/list';
 import { RequestsPage } from '../pages/requests/requests';
 import { LoginPage } from '../pages/login/login';
 import { SignupPage } from '../pages/signup/signup';
+import { UploadimagesPage } from '../pages/uploadimages/uploadimages';
 
+import { File } from '@ionic-native/file';
+import { Transfer } from '@ionic-native/transfer';
+import { FilePath } from '@ionic-native/file-path'
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { Camera } from '@ionic-native/camera';
 
 @NgModule({
   declarations: [
@@ -20,7 +25,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     ListPage,
     RequestsPage,
     LoginPage,
-    SignupPage
+    SignupPage,
+    UploadimagesPage
   ],
   imports: [
     BrowserModule,
@@ -34,11 +40,16 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     ListPage,
     RequestsPage,
     LoginPage,
-    SignupPage
+    SignupPage,
+    UploadimagesPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
+    File,
+    FilePath,
+    Transfer,
+    Camera,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
