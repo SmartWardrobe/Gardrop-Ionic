@@ -10,6 +10,7 @@ import { LoginPage } from  '../pages/login/login';
 import { SignupPage } from '../pages/signup/signup';
 import { UploadimagesPage } from '../pages/uploadimages/uploadimages';
 import { ShowimagesPage } from '../pages/showimages/showimages';
+import { Photouploadv2Page } from '../pages/photouploadv2/photouploadv2';
 
 @Component({
   templateUrl: 'app.html'
@@ -31,7 +32,8 @@ export class MyApp {
       { title: 'Requests', component: RequestsPage},
       { title: 'Login', component: LoginPage },
       { title: 'Signup', component: SignupPage },
-      { title: 'Upload Dress', component: UploadimagesPage},
+      { title: 'Old Upload Dress', component: UploadimagesPage},
+      { title: 'New Photo Upload', component:Photouploadv2Page},
       { title: 'My Gardrop', component:ShowimagesPage}
     ];
 

@@ -1,7 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
-import { HttpModule} from '@angular/http';
+import { HttpModule } from '@angular/http';
+import {HttpClientModule} from "@angular/common/http";
 
 import { MyApp } from './app.component';
 import { WelcomePage } from '../pages/welcome/welcome';
@@ -10,9 +11,10 @@ import { RequestsPage } from '../pages/requests/requests';
 import { LoginPage } from '../pages/login/login';
 import { SignupPage } from '../pages/signup/signup';
 import { UploadimagesPage } from '../pages/uploadimages/uploadimages';
+import { Photouploadv2Page } from '../pages/photouploadv2/photouploadv2';
 import { ShowimagesPage } from '../pages/showimages/showimages';
 
-import { FileTransfer, FileTransferObject } from '@ionic-native/file-transfer';
+import { FileTransfer } from '@ionic-native/file-transfer';
 
 import { File } from '@ionic-native/file';
 import { Transfer } from '@ionic-native/transfer';
@@ -31,12 +33,14 @@ import { PhotoServiceProvider } from '../providers/photo-service/photo-service';
     LoginPage,
     SignupPage,
     UploadimagesPage,
-    ShowimagesPage
+    ShowimagesPage,
+    Photouploadv2Page
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    HttpModule
+    HttpModule,
+    HttpClientModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -47,7 +51,8 @@ import { PhotoServiceProvider } from '../providers/photo-service/photo-service';
     LoginPage,
     SignupPage,
     UploadimagesPage,
-    ShowimagesPage
+    ShowimagesPage,
+    Photouploadv2Page
   ],
   providers: [
     StatusBar,
