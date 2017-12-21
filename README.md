@@ -26,6 +26,30 @@ $ ionic cordova run ios
 
 Substitute ios for android if not on a Mac.
 
+# Ionic Providers
+   Providers, uygulamanız için servis oluşturmanıza izin verir. Providers ile oluşturduğumuz servis ile bir sunucudan veri     getirme, veri işlemleri yapma, verileri paylaşma, karmaşık matematiksel işlemler seti verme gibi işlemler yapılabilir. Uygulamadaki bütünsel kodları servis kullanarak parçalayarak proje yapısını hafifletebiliriz. Bu şekilde kod tabanı daha sürdürülebilir kılınır ve uygulamanın birden çok farklı yerinde (veya tamamen farklı bir uygulamada) aynı provider ı yeniden kullanmamızı sağlar. 
+
+## Photo-Service Provider'ının Eklenmesi (showimages)  (Ionic 3)
+   Provider oluşturmak için Ionic CLI 'de 
+   $ ionic g provider photoservices
+   komutu ile provider oluşturulur. 'app.module.ts' te otamatik olarak import edilir.
+   Provider ı kullanacağımız sayfa (showimages) nın ts dosyasına (showimages) 
+   import { PhotoServiceProvider } from '../../providers/photo-service/photo-service';
+   şeklinde import edilir.
+   
+   @Component({
+   selector: 'page-showimages',
+   templateUrl: 'showimages.html',
+   providers: [PhotoServiceProvider] //provider eklenmesi
+   })
+   
+   Constructor ' a da PhotoServiseProvider eklenerek oluşturduğumuz provider ı kullanabiliriz.
+   constructor(public navCtrl: NavController, public navParams: NavParams, public photoService:PhotoServiceProvider) {
+   this.loadPicture();
+  }
+   
+
+
 # Ionic Projesi Ornegi
 
 https://github.com/matiastucci/ionic-ocr-example
