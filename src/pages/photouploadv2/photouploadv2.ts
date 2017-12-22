@@ -83,7 +83,7 @@ export class Photouploadv2Page {
   }
 
   private postData(formData: FormData) {
-    this.http.post<boolean>("https://gardrop-api.herokuapp.com/uploader", formData)
+    this.http.post<boolean>("https://gardrop-api.herokuapp.com/v1/uploader", formData)
       .pipe(
         catchError(e => this.handleError(e)),
         finalize(() => this.loading.dismiss())
