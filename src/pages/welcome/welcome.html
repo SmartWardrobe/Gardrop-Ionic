@@ -10,16 +10,21 @@
 <ion-content class="home">
     <div class="fullscreen-bg">
       <video class="fullscreen-bg_video" autoplay loop muted webkit-playsinline>
-        <source src="assets/videos/Blurry-People.mp4" types='video/mp4; codecs="h.264"'>
+        <source src="assets/videos/fashion_1.mp4" types='video/mp4; codecs="h.264"'>
         <source src="assets/videos/dualipa.webm" types="video/webm">
       </video>
     </div>
-    <div class="center animated zoomIn">
-      <h1>Beautiful App</h1>
-      <h2>Fast, Easy. Cheap .</h2>
-    </div>
-    <button class="signup" ion-button block color="black" (click)="openSignupPage()" >Sign Up</button>
-    <button class="login" ion-button block color="black" (click)="openLoginPage()" >Login</button>
+    <ion-footer>
+        <ion-row>
+          <ion-col>
+              <button ion-button start  class="signup" ion-button block color="black" (click)="openSignupPage()" >Sign Up</button>
+          </ion-col>
+          <ion-col>
+              <button ion-button end class="login" ion-button block color="black" (click)="openLoginPage()" >Login</button>
+          </ion-col>
+        </ion-row>      
+    </ion-footer>
+    
 </ion-content>
 
 <!--

@@ -23,12 +23,7 @@ page-welcome {
 		border: medium none;
 	}
 	
-	.signup {
-		background-color: black;
-	}
-	.login {
-		background-color: black;
-	}
+	
 
 	#bgvid {
 		
@@ -62,7 +57,7 @@ page-welcome {
 	}
 	*/
 	.home {
-		font-family: 'Lobster', cursive;
+		
 		color: white;
 		text-shadow: 1px 0 0 gray, -1px 0 0 gray, 0 1px 0 gray, 0 -1px 0 gray, 1px 1px gray, -1px -1px 0 gray, 1px -1px 0 gray, -1px 1px 0 gray;
 			
@@ -87,6 +82,7 @@ page-welcome {
 		top: 0;
 		left: 0;
 		height: 100%;
+		width: 100%;
 	}
 
 	.center {
@@ -95,5 +91,11 @@ page-welcome {
 		position: absolute !important;
 		text-align: center;
 		width:100%;
+	}
+	.signup {
+		background-color: black;
+	}
+	.login {
+		background-color: black;
 	}
 }
