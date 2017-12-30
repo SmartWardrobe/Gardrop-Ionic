@@ -13,6 +13,7 @@ import { SignupPage } from '../pages/signup/signup';
 import { UploadimagesPage } from '../pages/uploadimages/uploadimages';
 import { Photouploadv2Page } from '../pages/photouploadv2/photouploadv2';
 import { ShowimagesPage } from '../pages/showimages/showimages';
+import { WeatherPage } from '../pages/weather/weather';
 
 import { FileTransfer } from '@ionic-native/file-transfer';
 
@@ -23,6 +24,9 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { Camera } from '@ionic-native/camera';
 import { PhotoServiceProvider } from '../providers/photo-service/photo-service';
+import { WeatherserviceProvider } from '../providers/weatherservice/weatherservice';
+
+
 
 @NgModule({
   declarations: [
@@ -34,7 +38,8 @@ import { PhotoServiceProvider } from '../providers/photo-service/photo-service';
     SignupPage,
     UploadimagesPage,
     ShowimagesPage,
-    Photouploadv2Page
+    Photouploadv2Page,
+    WeatherPage
   ],
   imports: [
     BrowserModule,
@@ -52,7 +57,8 @@ import { PhotoServiceProvider } from '../providers/photo-service/photo-service';
     SignupPage,
     UploadimagesPage,
     ShowimagesPage,
-    Photouploadv2Page
+    Photouploadv2Page,
+    WeatherPage
   ],
   providers: [
     StatusBar,
@@ -63,7 +69,8 @@ import { PhotoServiceProvider } from '../providers/photo-service/photo-service';
     Transfer,
     Camera,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    PhotoServiceProvider
+    PhotoServiceProvider,
+    WeatherserviceProvider
   ]
 })
 export class AppModule {}
