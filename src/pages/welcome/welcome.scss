@@ -1,15 +1,12 @@
 page-welcome {
-	.background { 
-		background-image: url('../assets/imgs/red.jpg');
-}
-
-.scroll-content {
-		align-content: center;
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		text-align: center;
-	}
+	/*
+	.scroll-content {
+			align-content: center;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			text-align: center;
+		}
 
 	ion-card.card {
 		box-shadow: none;
@@ -25,50 +22,78 @@ page-welcome {
 	.list > .item-block:first-child {
 		border: medium none;
 	}
-
-	.item {
-		margin-bottom: 10px;
-		background: rgba(255, 255, 255, 0.5);
-		border: medium none;
-
-		.text-input, {
-			color: #fff;
-		}
-
-		input::-moz-placeholder  {
-			color: #fff!important;
-		}
-
-		input:-moz-placeholder {
-			color: #fff!important;
-		}
-
-		*::-webkit-input-placeholder  {
-			color: #fff!important;
-		}
-
-		*:-ms-input-placeholder  {
-			color: #fff!important;
-		}
-
-		*:-moz-placeholder  {
-			color: #fff!important;
-		}
-	}
-
-	.icon {
-		padding-right: 10px;
-	}
-
-	.bottom {
-		position: absolute;
-		bottom: 0;
-	}
 	
 	.signup {
 		background-color: black;
 	}
 	.login {
 		background-color: black;
+	}
+
+	#bgvid {
+		
+		position: fixed;
+		
+		top: 50%;
+		
+		left: 50%;
+		
+		min-width: 100%;
+		
+		min-height: 100%;
+		
+		width: auto;
+		
+		height: auto;
+		
+		z-index: -100;
+		
+		-webkit-transform: translateX(-50%) translateY(-50%);
+		-moz-transform: translateX(-50%) translateY(-50%);
+		-ms-transform: translateX(-50%) translateY(-50%);
+		-o-transform: translateX(-50%) translateY(-50%);
+		
+		transform: translateX(-50%) translateY(-50%);
+		
+		//background: url(http://video.webmfiles.org/big-buck-bunny_trailer.webm) no-repeat;
+		
+		background-size: cover;
+		
+	}
+	*/
+	.home {
+		font-family: 'Lobster', cursive;
+		color: white;
+		text-shadow: 1px 0 0 gray, -1px 0 0 gray, 0 1px 0 gray, 0 -1px 0 gray, 1px 1px gray, -1px -1px 0 gray, 1px -1px 0 gray, -1px 1px 0 gray;
+			
+		h1 {
+			font-size: 5rem;
+		}
+		
+	}
+
+	.fullscreen-bg {
+		position: fixed;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		overflow: hidden;
+		z-index: -100;
+	}
+
+	.fullscreen-bg_video {
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 100%;
+	}
+
+	.center {
+		top: 50%;
+		transform: translateY(-50%);
+		position: absolute !important;
+		text-align: center;
+		width:100%;
 	}
 }
