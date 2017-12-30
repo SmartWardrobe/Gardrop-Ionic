@@ -11,18 +11,25 @@ import { SignupPage } from '../pages/signup/signup';
 import { UploadimagesPage } from '../pages/uploadimages/uploadimages';
 import { ShowimagesPage } from '../pages/showimages/showimages';
 import { Photouploadv2Page } from '../pages/photouploadv2/photouploadv2';
+import { WeatherPage } from '../pages/weather/weather';
+
+import { WeatherserviceProvider } from '../providers/weatherservice/weatherservice';
 
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
+  temp:any; //havadurumu
   @ViewChild(Nav) nav: Nav;
 
   rootPage: any = WelcomePage;
 
   pages: Array<{title: string, component: any}>;
 
-  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
+  constructor(public platform: Platform,
+              public statusBar: StatusBar,
+              public splashScreen: SplashScreen,
+              public weatherService: WeatherserviceProvider) {
     this.initializeApp();
 
     // used for an example of ngFor and navigation
@@ -31,9 +38,16 @@ export class MyApp {
       { title: 'Login', component: LoginPage },
       { title: 'Signup', component: SignupPage },
       { title: 'Dress Upload', component:Photouploadv2Page},
-      { title: 'My Gardrop', component:ShowimagesPage}
+      { title: 'My Gardrop', component:ShowimagesPage},
+      { title: 'Show Weather', component:WeatherPage}
     ];
-
+    this.getWeather();
+  }
+  getWeather(){
+    this.weatherService.getWeather()
+    .subscribe(data => this.temp = data.content.main.temp_max - 273.15);
+    
+    
   }
 
   initializeApp() {
