@@ -10,7 +10,6 @@ import { ListPage } from '../pages/list/list';
 import { RequestsPage } from '../pages/requests/requests';
 import { LoginPage } from '../pages/login/login';
 import { SignupPage } from '../pages/signup/signup';
-import { UploadimagesPage } from '../pages/uploadimages/uploadimages';
 import { Photouploadv2Page } from '../pages/photouploadv2/photouploadv2';
 import { ShowimagesPage } from '../pages/showimages/showimages';
 import { WeatherPage } from '../pages/weather/weather';
@@ -36,7 +35,6 @@ import { WeatherserviceProvider } from '../providers/weatherservice/weatherservi
     RequestsPage,
     LoginPage,
     SignupPage,
-    UploadimagesPage,
     ShowimagesPage,
     Photouploadv2Page,
     WeatherPage
@@ -55,7 +53,6 @@ import { WeatherserviceProvider } from '../providers/weatherservice/weatherservi
     RequestsPage,
     LoginPage,
     SignupPage,
-    UploadimagesPage,
     ShowimagesPage,
     Photouploadv2Page,
     WeatherPage

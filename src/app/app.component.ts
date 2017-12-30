@@ -8,7 +8,6 @@ import { ListPage } from '../pages/list/list';
 import { RequestsPage } from '../pages/requests/requests';
 import { LoginPage } from  '../pages/login/login';
 import { SignupPage } from '../pages/signup/signup';
-import { UploadimagesPage } from '../pages/uploadimages/uploadimages';
 import { ShowimagesPage } from '../pages/showimages/showimages';
 import { Photouploadv2Page } from '../pages/photouploadv2/photouploadv2';
 import { WeatherPage } from '../pages/weather/weather';
@@ -19,6 +18,8 @@ import { WeatherserviceProvider } from '../providers/weatherservice/weatherservi
   templateUrl: 'app.html'
 })
 export class MyApp {
+  weatherType:any;
+  iconType:any;
   temp:any; //havadurumu
   @ViewChild(Nav) nav: Nav;
 
@@ -42,12 +43,34 @@ export class MyApp {
       { title: 'Show Weather', component:WeatherPage}
     ];
     this.getWeather();
+    this.getWeatherType();
+    
+    console.log("lolll");
   }
   getWeather(){
     this.weatherService.getWeather()
     .subscribe(data => this.temp = data.content.main.temp_max - 273.15);
-    
-    
+  }
+  getWeatherType(){
+    this.weatherService.getWeather()
+    .subscribe(data => {
+      this.weatherType = data.content.weather[0].main;
+      this.showWeatherType();
+    });
+  }
+  showWeatherType(){
+    if(this.weatherType==='Rain'){
+      console.log("weather is rain")
+      this.iconType="ios-rainy-outline";
+    }else if(this.weatherType==='Sunny'){
+      this.iconType="ios-sunny-outline";
+    }else if(this.weatherType==='Snow'){
+      this.iconType="ios-snow-outline";
+    }else if(this.weatherType==='Clouds'){
+      this.iconType="ios-cloud-outline";
+    }else if(this.weatherType === 'Mist'){
+      this.iconType="ios-barcode-outline";
+    }
   }
 
   initializeApp() {
