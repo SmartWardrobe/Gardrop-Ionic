@@ -18,7 +18,6 @@ export class WeatherPage {
   }
   getWeather(){
     this.weatherService.getWeather()
-    //.subscribe(data => console.log(data.content.main.temp_min));
     .subscribe(data => this.temp = data.content.main.temp_max);
     
   }
