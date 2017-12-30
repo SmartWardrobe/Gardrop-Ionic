@@ -1,17 +1,17 @@
 <ion-menu [content]="content">
   <ion-header>
+    
     <ion-toolbar>
-      <ion-grid>
           <ion-row>
-              <ion-col>
-                  <h5>Hoşgeldin</h5>
-              </ion-col>
-              <ion-col>
-                  <h5>{{temp | number:0}}°  <ion-icon name="{{iconType}}"></ion-icon> </h5>
-              </ion-col>
+            <ion-col>
+                <h5>Merhaba Gardrobır!</h5>
+            </ion-col>
+            <ion-col>
+                <h5 align="right">{{temp | number:0}}°  <ion-icon name="{{iconType}}"></ion-icon> </h5>   
+            </ion-col>
           </ion-row>
-      </ion-grid>
     </ion-toolbar>
+  
   </ion-header>
   <ion-content>
     <ion-list>
