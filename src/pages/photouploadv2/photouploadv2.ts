@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage } from 'ionic-angular';
 import {Observable} from "rxjs";
 import {LoadingController, Loading, ToastController} from "ionic-angular";
 import {Camera} from '@ionic-native/camera';
@@ -7,9 +7,6 @@ import {File, FileEntry} from "@ionic-native/file";
 import {catchError} from "rxjs/operators/catchError";
 import {finalize} from "rxjs/operators/finalize";
 import {HttpClient} from "@angular/common/http";
-
-
-
 
 @IonicPage()
 @Component({
