@@ -11,13 +11,13 @@ import { Http, Headers, RequestOptions } from '@angular/http';
 })
 export class LoginPage {
   data:any = {};
-
+  user_info:any = {};
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public http: Http) {
-  this.data.email = '';
-  this.data.password = '';
+    this.data.email = '';
+    this.data.password = '';
 
-  this.http = http;
+    this.http = http;
   }
 
   login(){
@@ -34,8 +34,11 @@ export class LoginPage {
     };
     console.log(myData);
     this.http.post(link,myData,options)
+      .map(res => res.json())
       .subscribe(data => {
         this.data.response = data["status"]; // 200 donduruyor
+        this.user_info=data["_body"];
+        console.log(data);
         if (this.data.response === 200){
           this.data.response="Giriş Başarılı"
         }
