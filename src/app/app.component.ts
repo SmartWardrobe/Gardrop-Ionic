@@ -7,7 +7,7 @@ import { WelcomePage } from '../pages/welcome/welcome';
 import { LoginPage } from  '../pages/login/login';
 import { SignupPage } from '../pages/signup/signup';
 import { ShowimagesPage } from '../pages/showimages/showimages';
-import { Photouploadv2Page } from '../pages/photouploadv2/photouploadv2';
+import { PhotouploadPage } from '../pages/photoupload/photoupload';
 import { WeatherPage } from '../pages/weather/weather';
 
 import { WeatherserviceProvider } from '../providers/weatherservice/weatherservice';
@@ -36,9 +36,9 @@ export class MyApp {
       { title: 'Home Page', component: WelcomePage },      
       { title: 'Login', component: LoginPage },
       { title: 'Signup', component: SignupPage },
-      { title: 'Dress Upload', component:Photouploadv2Page},
       { title: 'My Gardrop', component:ShowimagesPage},
-      { title: 'Show Weather', component:WeatherPage}
+      { title: 'Show Weather', component:WeatherPage},
+      { title: 'Dress Upload Debug', component:PhotouploadPage}
     ];
     this.getWeather();
     this.getWeatherType();
@@ -60,7 +60,7 @@ export class MyApp {
     if(this.weatherType==='Rain'){
       console.log("weather is rain")
       this.iconType="ios-rainy-outline";
-    }else if(this.weatherType==='Sunny'){
+    }else if(this.weatherType==='Sunny' || this.weatherType==='Clear'){
       this.iconType="ios-sunny-outline";
     }else if(this.weatherType==='Snow'){
       this.iconType="ios-snow-outline";

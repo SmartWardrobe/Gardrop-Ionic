@@ -3,14 +3,14 @@ import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { HttpModule } from '@angular/http';
 import {HttpClientModule} from "@angular/common/http";
+import {IonicImageViewerModule } from 'ionic-img-viewer';
 
 import { MyApp } from './app.component';
 import { WelcomePage } from '../pages/welcome/welcome';
 import { ListPage } from '../pages/list/list';
-import { RequestsPage } from '../pages/requests/requests';
 import { LoginPage } from '../pages/login/login';
 import { SignupPage } from '../pages/signup/signup';
-import { Photouploadv2Page } from '../pages/photouploadv2/photouploadv2';
+import { PhotouploadPage } from '../pages/photoupload/photoupload';
 import { ShowimagesPage } from '../pages/showimages/showimages';
 import { WeatherPage } from '../pages/weather/weather';
 
@@ -32,29 +32,28 @@ import { WeatherserviceProvider } from '../providers/weatherservice/weatherservi
     MyApp,
     WelcomePage,
     ListPage,
-    RequestsPage,
     LoginPage,
     SignupPage,
     ShowimagesPage,
-    Photouploadv2Page,
+    PhotouploadPage,
     WeatherPage
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
     HttpModule,
-    HttpClientModule
+    HttpClientModule,
+    IonicImageViewerModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
     WelcomePage,
     ListPage,
-    RequestsPage,
     LoginPage,
     SignupPage,
     ShowimagesPage,
-    Photouploadv2Page,
+    PhotouploadPage,
     WeatherPage
   ],
   providers: [
