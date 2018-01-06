@@ -7,31 +7,26 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-<ion-content class="background">
-  <ion-card>
-    <ion-card-header>
-     Kullanıcı Kaydı
-    </ion-card-header>
-    <ion-card-content>
-      
-      <ion-list no-line>
+<ion-content padding class="background" >
+    <ion-card class="card">
+      <ion-list class="list" >
         <ion-item>
-          <ion-input [(ngModel)]="data.username" name="username" type="text" placeholder="Kullanıcı Adı"></ion-input>
+            <ion-input [(ngModel)]="data.username" name="username" type="text" placeholder="Kullanıcı Adı" required></ion-input>
+        </ion-item> 
+        <ion-item>
+            <ion-input [(ngModel)]="data.fullname" name="fullname" type="text" placeholder="Ad Soyad" required></ion-input>
+        </ion-item> 
+        <ion-item>
+            <ion-input [(ngModel)]="data.email" name="email" type="text" placeholder="Email" required></ion-input>
+        </ion-item>   
+        <ion-item>
+            <ion-input [(ngModel)]="data.password" name="password" type="password" placeholder="Parola" required></ion-input>
         </ion-item>
-        <ion-item>
-          <ion-input [(ngModel)]="data.fullname" name="fullname" type="text" placeholder="Ad Soyad"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-input [(ngModel)]="data.email" name="email" type="text" placeholder="Email"></ion-input>
-        </ion-item>      
-        <ion-item>
-          <ion-input [(ngModel)]="data.password" name="password" type="password" placeholder="Parola"></ion-input>
-        </ion-item>
-        <button ion-button block color="blue" (click)="register()">Kayit ol</button>
       </ion-list>
-    </ion-card-content>
-    <b>{{data.response}}</b>      
-  </ion-card>
+          
+          <button ion-button block color="blue" (click)="register()" >Kayit ol</button>
+        <h5 align="center">{{data.response}}</h5>
+    </ion-card>
 </ion-content>
+
 
