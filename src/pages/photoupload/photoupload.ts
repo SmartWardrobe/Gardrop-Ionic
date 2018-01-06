@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
 import { IonicPage } from 'ionic-angular';
 import {LoadingController, Loading, ToastController} from "ionic-angular";
+import { NavController } from 'ionic-angular';
 import {Camera} from '@ionic-native/camera';
 import {File, FileEntry} from "@ionic-native/file";
 import {finalize} from "rxjs/operators/finalize";
 import { Http } from '@angular/http'; 
+import { PhotopropertiesPage } from '../photoproperties/photoproperties';
 
 @IonicPage()
 @Component({
@@ -24,7 +26,8 @@ export class PhotouploadPage {
     private readonly loadingCtrl: LoadingController,
     private readonly toastCtrl: ToastController,
     private readonly camera: Camera,
-    private readonly file: File) {
+    private readonly file: File,
+    public navCtrl: NavController) {
 }
 
   takePhoto() {
@@ -90,19 +93,9 @@ export class PhotouploadPage {
         this.filename = data['filename'];
         this.result = JSON.stringify(data);
         this.showToast(this.result);
-      });
-  }
-
-  private updatePhotoProperties() {
-    let myPhotoData = {
-      "filename" : this.filename,
-      "color" : this.color
-    };
-    this.http.put("https://gardrop-api.herokuapp.com/v1/pic", myPhotoData)
-      .map(res => res.json())
-      .subscribe(data => {
-        this.filename = data['filename'];
-        this.showToast("updated.");
+        this.navCtrl.push(PhotopropertiesPage, {
+          filename: this.filename
+        });
       });
   }
 
