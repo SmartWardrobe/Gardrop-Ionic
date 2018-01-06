@@ -10,6 +10,7 @@ import { PhotoServiceProvider } from '../../providers/photo-service/photo-servic
   providers: [PhotoServiceProvider]
 })
 export class ShowimagesPage {
+  galleryType = 'multi';
   public dress:any;
   constructor(public navCtrl: NavController, public navParams: NavParams, public photoService:PhotoServiceProvider) {
    this.loadPicture();
