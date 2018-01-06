@@ -7,6 +7,7 @@ import { WelcomePage } from '../pages/welcome/welcome';
 import { LoginPage } from  '../pages/login/login';
 import { SignupPage } from '../pages/signup/signup';
 import { ShowimagesPage } from '../pages/showimages/showimages';
+import { ShowmyimagesPage  } from '../pages/showmyimages/showmyimages';
 import { PhotouploadPage } from '../pages/photoupload/photoupload';
 import { WeatherPage } from '../pages/weather/weather';
 
@@ -38,7 +39,8 @@ export class MyApp {
       { title: 'Signup', component: SignupPage },
       { title: 'My Gardrop', component:ShowimagesPage},
       { title: 'Show Weather', component:WeatherPage},
-      { title: 'Dress Upload Debug', component:PhotouploadPage}
+      { title: 'Dress Upload Debug', component:PhotouploadPage},
+      { title: 'My Images', component:ShowmyimagesPage}
     ];
     this.getWeather();
     this.getWeatherType();
