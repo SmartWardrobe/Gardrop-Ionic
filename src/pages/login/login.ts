@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Http, Headers, RequestOptions } from '@angular/http'; 
-
-
+import { ShowmyimagesPage } from '../showmyimages/showmyimages';
 
 @IonicPage()
 @Component({
@@ -11,7 +10,7 @@ import { Http, Headers, RequestOptions } from '@angular/http';
 })
 export class LoginPage {
   data:any = {};
-  user_info:any = {};
+  userinfo:any = {};
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public http: Http) {
     this.data.email = '';
@@ -37,12 +36,15 @@ export class LoginPage {
       .map(res => res.json())
       .subscribe(data => {
         this.data.response = data["status"]; // 200 donduruyor
-        this.user_info=data["_body"];
+        this.userinfo=data["data"];
         console.log(data);
         if (this.data.response === 200){
           this.data.response="Giriş Başarılı"
         }
         //yeni sayfaya yonlendirecek...
+        this.navCtrl.push(ShowmyimagesPage, {
+          userinfo: this.userinfo
+        });
       },error => {
           console.log("Erorrr!");
       });
