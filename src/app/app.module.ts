@@ -13,6 +13,7 @@ import { SignupPage } from '../pages/signup/signup';
 import { PhotouploadPage } from '../pages/photoupload/photoupload';
 import { ShowimagesPage } from '../pages/showimages/showimages';
 import { ShowmyimagesPage  } from '../pages/showmyimages/showmyimages';
+import { PhotopropertiesPage } from '../pages/photoproperties/photoproperties';
 import { WeatherPage } from '../pages/weather/weather';
 
 import { FileTransfer } from '@ionic-native/file-transfer';
@@ -38,7 +39,8 @@ import { WeatherserviceProvider } from '../providers/weatherservice/weatherservi
     ShowimagesPage,
     ShowmyimagesPage,
     PhotouploadPage,
-    WeatherPage
+    WeatherPage,
+    PhotopropertiesPage 
   ],
   imports: [
     BrowserModule,
@@ -57,7 +59,8 @@ import { WeatherserviceProvider } from '../providers/weatherservice/weatherservi
     ShowimagesPage,
     ShowmyimagesPage,
     PhotouploadPage,
-    WeatherPage
+    WeatherPage,
+    PhotopropertiesPage 
   ],
   providers: [
     StatusBar,
