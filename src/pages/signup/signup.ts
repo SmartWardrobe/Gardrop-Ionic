@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { Http, Headers, RequestOptions } from '@angular/http'; 
+import { Http, Headers, RequestOptions } from '@angular/http';
+import { LoginPage } from  '../login/login';
+import { ToastController } from "ionic-angular";
 import 'rxjs/add/operator/do';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
@@ -18,7 +20,7 @@ export class SignupPage {
   items : any;
   sg_result:string;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public http: Http) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public http: Http,private readonly toastCtrl: ToastController,) {
     this.data.username = '';
     this.data.fullname = '';
     this.data.email = '';
@@ -45,10 +47,23 @@ export class SignupPage {
       .map(res => res.json())
       .subscribe(data => {
         this.sg_result = data["content"]; //json donuyor
+        if(data["status"]==="okey"){
+          this.showToast(this.sg_result);
+          this.navCtrl.push(LoginPage);
+        }
       }, error => {
+        this.showToast("Bu kullanıcı adı kullanılmaktadır.");
         console.log("Oooops!");
       });
       return this.items
+    }
+    private showToast(content: string) {
+      const toast = this.toastCtrl.create({
+        message: content,
+        duration: 3000,
+        position: 'top'
+      });
+      toast.present();
     }
 
 }
