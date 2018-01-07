@@ -13,7 +13,7 @@ export class PhotopropertiesPage {
   public photocolor:string;
   public filename: string;
   public type: string;
-
+  public stringpics: string;
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
               private readonly http: Http,
@@ -31,8 +31,9 @@ export class PhotopropertiesPage {
     this.http.put("https://gardrop-api.herokuapp.com/v1/pic", myPhotoData)
       .map(res => res.json())
       .subscribe(data => {
-        this.filename = data['filename'];
-        this.showToast("updated.");
+        this.global.user_info.pics = data['pics'];
+        this.stringpics = JSON.stringify(data['pics']);
+        this.showToast(`updated.Pics: ${this.stringpics}`);
       });
   }
   private showToast(content: string) {
