@@ -8,6 +8,7 @@
 </ion-header>
 
 <ion-content padding class="background" >
+   
     <ion-card class="card">
       <ion-list class="list" >
         <ion-item>
@@ -23,10 +24,10 @@
             <ion-input [(ngModel)]="data.password" name="password" type="password" placeholder="Parola" required></ion-input>
         </ion-item>
       </ion-list>
-          
           <button ion-button block color="blue" (click)="register()" >Kullanıcı Oluştur</button>
-        <h5 align="center">{{data.response}}</h5>
+        <h5 align="center">{{sg_result}}</h5>
     </ion-card>
+    
 </ion-content>
 
 

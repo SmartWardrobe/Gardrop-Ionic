@@ -16,6 +16,7 @@ import 'rxjs/Rx';
 export class SignupPage {
   data:any = {};
   items : any;
+  sg_result:string;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public http: Http) {
     this.data.username = '';
@@ -32,7 +33,7 @@ export class SignupPage {
     headers.append("Content-type", 'application/json');
     let options = new RequestOptions({ headers: headers });
     console.log('Clicked Kayit ol!');
-    let link = 'https://gardrop-api.herokuapp.com/v1/create_user';
+    let link = 'https://gardrop-api.herokuapp.com/v1/users';
     let myData = {
       "username": this.data.username,
       "fullname": this.data.fullname,
@@ -41,8 +42,9 @@ export class SignupPage {
     };
     console.log(myData);
     this.http.post(link,myData,options)
+      .map(res => res.json())
       .subscribe(data => {
-        this.data.response = data["_body"]; //json donuyor
+        this.sg_result = data["content"]; //json donuyor
       }, error => {
         console.log("Oooops!");
       });
