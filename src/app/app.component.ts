@@ -8,7 +8,7 @@ import { LoginPage } from  '../pages/login/login';
 import { SignupPage } from '../pages/signup/signup';
 import { ShowmyimagesPage  } from '../pages/showmyimages/showmyimages';
 import { PhotouploadPage } from '../pages/photoupload/photoupload';
-
+import { CombinePage } from '../pages/combine/combine';
 import { WeatherserviceProvider } from '../providers/weatherservice/weatherservice';
 
 @Component({
@@ -37,7 +37,8 @@ export class MyApp {
       { title: 'Gardrobum', component:ShowmyimagesPage}, 
       { title: 'Login', component: LoginPage },
       { title: 'Signup', component: SignupPage },
-      { title: 'Kıyafet Yükle', component:PhotouploadPage}
+      { title: 'Kıyafet Yükle', component:PhotouploadPage},
+      { title: 'Kombin', component:CombinePage}
     ];
     this.getWeather();
     this.getWeatherType();

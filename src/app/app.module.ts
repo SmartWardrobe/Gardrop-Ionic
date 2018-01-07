@@ -13,9 +13,9 @@ import { PhotouploadPage } from '../pages/photoupload/photoupload';
 import { ShowmyimagesPage  } from '../pages/showmyimages/showmyimages';
 import { PhotopropertiesPage } from '../pages/photoproperties/photoproperties';
 import { WeatherPage } from '../pages/weather/weather';
+import { CombinePage } from '../pages/combine/combine';
 
 import { FileTransfer } from '@ionic-native/file-transfer';
-
 import { File } from '@ionic-native/file';
 import { Transfer } from '@ionic-native/transfer';
 import { FilePath } from '@ionic-native/file-path'
@@ -37,7 +37,8 @@ import { GlobalProvider } from '../providers/global/global';
     ShowmyimagesPage,
     PhotouploadPage,
     WeatherPage,
-    PhotopropertiesPage 
+    PhotopropertiesPage,
+    CombinePage
   ],
   imports: [
     BrowserModule,
@@ -55,7 +56,8 @@ import { GlobalProvider } from '../providers/global/global';
     ShowmyimagesPage,
     PhotouploadPage,
     WeatherPage,
-    PhotopropertiesPage 
+    PhotopropertiesPage,
+    CombinePage
   ],
   providers: [
     StatusBar,
