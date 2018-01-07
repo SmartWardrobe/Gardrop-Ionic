@@ -39,7 +39,7 @@ export class LoginPage {
         this.userinfo=data["data"];
         console.log(data);
         if (this.data.response === 200){
-          this.data.response="Giriş Başarılı"
+          this.data.response="Giriş Başarılı";
         }
         //yeni sayfaya yonlendirecek...
         this.navCtrl.push(ShowmyimagesPage, {
