@@ -1,8 +1,12 @@
 
 page-signup {
 	.background { 
-		background-image: url('../assets/imgs/babe.jpg');
-		background-size: cover;
+		background-image: url('../assets/imgs/zıp.jpg');
+		background-size: 500px;
+		background-repeat: round;
+		margin-top: 30px;
+
+
 
 
 	}
@@ -10,8 +14,11 @@ page-signup {
 		box-shadow: none;
 		border-radius: 5px;
 		background-color: transparent;
+		position: sticky;
+		margin-top: 230px;
 }
 	ion-list.list{
 	background-color: transparent;
+
 	}
 }

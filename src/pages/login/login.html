@@ -5,25 +5,27 @@
       <button ion-button menuToggle>
           <ion-icon name="menu"></ion-icon>
         </button>
-    <ion-title>Login Ekranı</ion-title>
+    <ion-title>Kullanıcı Girişi</ion-title>
   </ion-navbar>
 
 </ion-header>
 
-<ion-content padding>
-    <ion-card>
+<ion-content padding class="background">
+    <ion-card class="card">
         <ion-item>
-            <ion-input [(ngModel)]="data.email" type="text" placeholder="Email" required></ion-input>
+            <ion-input [(ngModel)]="data.email" type="text" placeholder="E-posta" required></ion-input>
         </ion-item>   
         <ion-item>
             <ion-input [(ngModel)]="data.password" type="password" placeholder="Parola" required></ion-input>
         </ion-item>
-          <a>Parolanı mı unuttun? <b>Haydi bu sorunu çözelim. </b></a>
-        <button ion-button block color="blue" (click)="login()">Giris Yap</button>
-        <p>YA DA</p>
+        <ion-item>
+        <b><a style="color:facebook" href="#">Parolanı mı unuttun?</a></b>
+        <button ion-button block color="blue" (click)="login()">Giriş Yap</button>
+        <p align="center">YA DA</p>
         <button ion-button block color="facebook">
-          <ion-icon name="logo-facebook"></ion-icon> Facebook ile Giris
+          <ion-icon name="logo-facebook"></ion-icon>   Facebook ile Giriş
         </button>
         <h5 align="center">{{login_result}}</h5>
+        </ion-item>
     </ion-card>
 </ion-content>

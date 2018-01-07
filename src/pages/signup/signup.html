@@ -3,7 +3,7 @@
       <button ion-button menuToggle>
         <ion-icon name="menu"></ion-icon>
       </button>
-    <ion-title>GARDROP</ion-title>
+    <ion-title>Yeni Kullanıcı</ion-title>
   </ion-navbar>
 </ion-header>
 
@@ -17,14 +17,14 @@
             <ion-input [(ngModel)]="data.fullname" name="fullname" type="text" placeholder="Ad Soyad" required></ion-input>
         </ion-item> 
         <ion-item>
-            <ion-input [(ngModel)]="data.email" name="email" type="text" placeholder="Email" required></ion-input>
+            <ion-input [(ngModel)]="data.email" name="email" type="text" placeholder="E-posta" required></ion-input>
         </ion-item>   
         <ion-item>
             <ion-input [(ngModel)]="data.password" name="password" type="password" placeholder="Parola" required></ion-input>
         </ion-item>
       </ion-list>
           
-          <button ion-button block color="blue" (click)="register()" >Kayit ol</button>
+          <button ion-button block color="blue" (click)="register()" >Kullanıcı Oluştur</button>
         <h5 align="center">{{data.response}}</h5>
     </ion-card>
 </ion-content>

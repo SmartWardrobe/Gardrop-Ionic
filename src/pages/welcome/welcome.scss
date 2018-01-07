@@ -1,64 +1,8 @@
 page-welcome {
-	/*
-	.scroll-content {
-			align-content: center;
-			display: flex;
-			flex-direction: column;
-			justify-content: center;
-			text-align: center;
-		}
 
-	ion-card.card {
-		box-shadow: none;
-		background: rgba(0, 0, 0, 0.5);
-		border-radius: 5px;
-	}
-
-	a, p,
-	ion-card-header.card-header {
-		color: #fff!important;
-	}
-
-	.list > .item-block:first-child {
-		border: medium none;
-	}
-	
-	
-
-	#bgvid {
-		
-		position: fixed;
-		
-		top: 50%;
-		
-		left: 50%;
-		
-		min-width: 100%;
-		
-		min-height: 100%;
-		
-		width: auto;
-		
-		height: auto;
-		
-		z-index: -100;
-		
-		-webkit-transform: translateX(-50%) translateY(-50%);
-		-moz-transform: translateX(-50%) translateY(-50%);
-		-ms-transform: translateX(-50%) translateY(-50%);
-		-o-transform: translateX(-50%) translateY(-50%);
-		
-		transform: translateX(-50%) translateY(-50%);
-		
-		//background: url(http://video.webmfiles.org/big-buck-bunny_trailer.webm) no-repeat;
-		
-		background-size: cover;
-		
-	}
-	*/
 	.home {
 		
-		color: white;
+		background-color: black;
 		text-shadow: 1px 0 0 gray, -1px 0 0 gray, 0 1px 0 gray, 0 -1px 0 gray, 1px 1px gray, -1px -1px 0 gray, 1px -1px 0 gray, -1px 1px 0 gray;
 			
 		h1 {
@@ -93,9 +37,11 @@ page-welcome {
 		width:100%;
 	}
 	.signup {
-		background-color: black;
+		background-color: gray;
+		
 	}
 	.login {
-		background-color: black;
+		background-color: gray;
 	}
+
 }
