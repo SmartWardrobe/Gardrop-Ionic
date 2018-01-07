@@ -17,14 +17,14 @@ export class ShowmyimagesPage {
               public global: GlobalProvider) {
     console.log(this.global.user_info);
     this.pics = this.global.user_info.pics;
-    console.log(`Pics: ${this.pics}`)
     for (let pic of this.pics) {
-      console.log(`Pic: ${pic}`)
+      console.log(`Pic: Filename:${pic.filename} Color:${pic.color} Type:${pic.type}`)
     }
   }
+
   openPhotouploadPage(){
     this.navCtrl.push(PhotouploadPage);
-}
+  }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ShowmyimagesPage');
