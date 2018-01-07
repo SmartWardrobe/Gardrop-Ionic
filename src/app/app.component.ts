@@ -35,8 +35,6 @@ export class MyApp {
     this.pages = [
       { title: 'Anasayfa', component: WelcomePage },     
       { title: 'Gardrobum', component:ShowmyimagesPage}, 
-      { title: 'Login', component: LoginPage },
-      { title: 'Signup', component: SignupPage },
       { title: 'Kıyafet Yükle', component:PhotouploadPage},
       { title: 'Kombin', component:CombinePage}
     ];
