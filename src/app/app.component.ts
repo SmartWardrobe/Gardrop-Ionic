@@ -13,10 +13,6 @@ import { WeatherserviceProvider } from '../providers/weatherservice/weatherservi
   templateUrl: 'app.html'
 })
 export class MyApp {
-  
-  weatherType:any;
-  iconType:any;
-  weatherDegree:any; //havadurumu
   @ViewChild(Nav) nav: Nav;
 
   rootPage: any = WelcomePage;
@@ -36,32 +32,8 @@ export class MyApp {
       { title: 'Kıyafet Yükle', component:PhotouploadPage},
       { title: 'Kombin', component:CombinePage}
     ];
-    this.getWeather();
     
     console.log("lolll");
-  }
-  getWeather(){
-    this.weatherService.getWeather()
-    .subscribe(data => {
-      this.weatherDegree = data.content.main.temp_max - 273.15;
-      this.weatherType = data.content.weather[0].main;
-      this.showWeatherType();
-    });
-  }
-
-  showWeatherType(){
-    if(this.weatherType==='Rain'){
-      console.log("weather is rain")
-      this.iconType="ios-rainy-outline";
-    }else if(this.weatherType==='Sunny' || this.weatherType==='Clear'){
-      this.iconType="ios-sunny-outline";
-    }else if(this.weatherType==='Snow'){
-      this.iconType="ios-snow-outline";
-    }else if(this.weatherType==='Clouds'){
-      this.iconType="ios-cloud-outline";
-    }else if(this.weatherType === 'Mist'){
-      this.iconType="ios-barcode-outline";
-    }
   }
 
   initializeApp() {
