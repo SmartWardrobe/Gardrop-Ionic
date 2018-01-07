@@ -11,20 +11,9 @@
   
   
   <ion-content>
+    <div>
     
-    <ion-segment [(ngModel)]="galleryType">
-      <ion-segment-button value="multi">
-        Çoklu
-      </ion-segment-button>
-      <ion-segment-button value="slide">
-        Tekli
-      </ion-segment-button>
-    </ion-segment>
-  
-  
-    <div [ngSwitch]="galleryType">
-    
-      <ion-grid *ngSwitchCase="'multi'">
+      <ion-grid>
         <ion-row>
           <ion-col col-6 col-md-4 col-xl-3 *ngFor="let pic of pics" >
             <div class="image-container">
@@ -33,15 +22,9 @@
           </ion-col>
         </ion-row>
       </ion-grid>
-
-      <ion-grid *ngSwitchCase="'slide'">
-          <ion-slides class="image-slader" loop="true" >
-              <ion-slide>
-                <img src="https://gardrop-api.herokuapp.com/v1/pic/{{pic}}" class="thumb-img" imageViewer>
-              </ion-slide>
-          </ion-slides>
-      </ion-grid>
-  
-    </div> 
+    </div>
+    <ion-footer>
+      <button ion-button block color="dark" (click)="openPhotouploadPage()" >Kıyafet ekle</button>
+    </ion-footer> 
   </ion-content>
   

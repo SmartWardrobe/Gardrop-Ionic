@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { GlobalProvider } from "../../providers/global/global";
+import { PhotouploadPage } from '../photoupload/photoupload';
 
 @IonicPage()
 @Component({
@@ -21,6 +22,9 @@ export class ShowmyimagesPage {
       console.log(`Pic: ${pic}`)
     }
   }
+  openPhotouploadPage(){
+    this.navCtrl.push(PhotouploadPage);
+}
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ShowmyimagesPage');
