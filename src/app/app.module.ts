@@ -26,6 +26,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { Camera } from '@ionic-native/camera';
 import { PhotoServiceProvider } from '../providers/photo-service/photo-service';
 import { WeatherserviceProvider } from '../providers/weatherservice/weatherservice';
+import { GlobalProvider } from '../providers/global/global';
 
 
 
@@ -72,7 +73,8 @@ import { WeatherserviceProvider } from '../providers/weatherservice/weatherservi
     Camera,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     PhotoServiceProvider,
-    WeatherserviceProvider
+    WeatherserviceProvider,
+    GlobalProvider
   ]
 })
 export class AppModule {}

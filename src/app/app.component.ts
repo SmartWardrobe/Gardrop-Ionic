@@ -19,6 +19,7 @@ import { WeatherserviceProvider } from '../providers/weatherservice/weatherservi
   templateUrl: 'app.html'
 })
 export class MyApp {
+  //public userinfo:any = {};
   weatherType:any;
   iconType:any;
   temp:any; //havadurumu
