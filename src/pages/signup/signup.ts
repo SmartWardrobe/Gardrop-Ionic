@@ -48,7 +48,7 @@ export class SignupPage {
       .subscribe(data => {
         this.sg_result = data["content"]; //json donuyor
         if(data["status"]==="okey"){
-          this.showToast(this.sg_result);
+          this.showToast("Kayıt olusturuldu");
           this.navCtrl.push(LoginPage);
         }
       }, error => {

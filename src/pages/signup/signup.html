@@ -18,10 +18,10 @@
             <ion-input [(ngModel)]="data.fullname" name="fullname" type="text" placeholder="Ad Soyad" required></ion-input>
         </ion-item> 
         <ion-item>
-            <ion-input [(ngModel)]="data.email" name="email" type="text" placeholder="E-posta" required></ion-input>
+            <ion-input [(ngModel)]="data.email" name="email" type="text" placeholder="E-posta" pattern="[A-Za-z0-9._%+-]{3,}@[a-zA-Z]{3,}([.]{1}[a-zA-Z]{2,}|[.]{1}[a-zA-Z]{2,}[.]{1}[a-zA-Z]{2,})" required></ion-input>
         </ion-item>   
         <ion-item>
-            <ion-input [(ngModel)]="data.password" name="password" type="password" placeholder="Parola" required></ion-input>
+            <ion-input [(ngModel)]="data.password" name="password" type="password" placeholder="Parola" minlength="6" required></ion-input>
         </ion-item>
       </ion-list>
           <button ion-button block color="blue" (click)="register()" >Kullanıcı Oluştur</button>
