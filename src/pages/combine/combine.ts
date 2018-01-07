@@ -17,11 +17,14 @@ import { GlobalProvider } from "../../providers/global/global";
 export class CombinePage {
   public photobottom: any; // photobottom.filename ile fotografin ismine ulasabilirsin.
   public phototop: any;
-  public result: any;
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
               private readonly http: Http,
               public global: GlobalProvider) {
+    this.photobottom = {};
+    this.phototop = {};
+    this.photobottom.filename = "";
+    this.phototop.filename = "";
     this.loadCombine();
   }
 
@@ -31,10 +34,10 @@ export class CombinePage {
     this.http.get(link)
       .map(res => res.json())
       .subscribe(data => {
-        this.result = data; // 200 donduruyor
         this.photobottom = data["bottom"];
         this.phototop = data["top"];
-        console.log(this.result);
+        console.log(this.photobottom);
+        console.log(this.phototop);
       },error => {
         console.log("Erorrr!");
       });

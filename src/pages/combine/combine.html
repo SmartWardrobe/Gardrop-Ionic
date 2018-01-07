@@ -1,33 +1,27 @@
 <ion-header>
   
     <ion-navbar>
-        <button ion-button menuToggle>
-            <ion-icon name="menu"></ion-icon>
-          </button>
       <ion-title>Kombin</ion-title>
     </ion-navbar>
   
 </ion-header>
 
 <ion-content padding>
-        <div>
-            <ion-grid>
-                
-                <ion-row *ngFor="let pic of photobottom">
-                        <h3 align="center">Ust Kısım</h3>
-                    <div class="image-container">
-                          <img src="https://gardrop-api.herokuapp.com/v1/pic/{{pic.filename}}">
-                    </div>
-                    
-                </ion-row>
-                <ion-row *ngFor="let pic of photoyop">
-                        <h3 align="center">Alt Kısım</h3>
-                    <div class="image-container">
-                          <img src="https://gardrop-api.herokuapp.com/v1/pic/{{pic.filename}}">
-                    </div>
-                </ion-row>
-
-            </ion-grid>
-        </div>
+    <div>
+        <ion-grid>
+            <ion-row>
+                <h3 align="center">Ust Kısım</h3>
+                <div class="image-container">
+                    <img src="https://gardrop-api.herokuapp.com/v1/pic/{{phototop.filename}}">
+                </div> 
+            </ion-row>
+            <ion-row>
+                <h3 align="center">Alt Kısım</h3>
+                <div class="image-container">
+                    <img src="https://gardrop-api.herokuapp.com/v1/pic/{{photobottom.filename}}">
+                </div>
+            </ion-row>
+        </ion-grid>
+    </div>
 </ion-content>
 
