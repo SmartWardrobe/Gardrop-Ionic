@@ -15,7 +15,7 @@ export class ShowmyimagesPage {
               public navParams: NavParams,
               public global: GlobalProvider) {
     console.log(this.global.user_info);
-    this.pics = this.global.user_info;
+    this.pics = this.global.user_info.pics;
     console.log(`Pics: ${this.pics}`)
     for (let pic of this.pics) {
       console.log(`Pic: ${pic}`)
