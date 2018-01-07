@@ -1,24 +1,3 @@
-<!--
-  Generated template for the ShowmyimagesPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
-<ion-header>
-
-  <ion-navbar>
-    <ion-title>showmyimages</ion-title>
-  </ion-navbar>
-
-</ion-header>
-
-
-<ion-content padding>
-
-</ion-content>
-
-
-
 <ion-header>
   
     <ion-navbar>
@@ -38,7 +17,7 @@
         Çoklu
       </ion-segment-button>
       <ion-segment-button value="slide">
-        Slayt
+        Tekli
       </ion-segment-button>
     </ion-segment>
   
@@ -47,12 +26,20 @@
     
       <ion-grid *ngSwitchCase="'multi'">
         <ion-row>
-          <ion-col *ngFor="let pic of pics" >
+          <ion-col col-6 col-md-4 col-xl-3 *ngFor="let pic of pics" >
             <div class="image-container">
                 <img src="https://gardrop-api.herokuapp.com/v1/pic/{{pic}}">
             </div>
           </ion-col>
         </ion-row>
+      </ion-grid>
+
+      <ion-grid *ngSwitchCase="'slide'">
+          <ion-slides class="image-slader" loop="true" >
+              <ion-slide>
+                <img src="https://gardrop-api.herokuapp.com/v1/pic/{{pic}}" class="thumb-img" imageViewer>
+              </ion-slide>
+          </ion-slides>
       </ion-grid>
   
     </div> 

@@ -1,12 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { GlobalProvider } from "../../providers/global/global";
 
-/**
- * Generated class for the ShowmyimagesPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+
 
 @IonicPage()
 @Component({
@@ -17,10 +13,15 @@ export class ShowmyimagesPage {
   galleryType = 'multi';
   userinfo: any;
   pics: any;
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-    this.userinfo = navParams.get('userinfo');
-    console.log(this.userinfo);
-    this.pics = this.userinfo.pics;
+  constructor(public navCtrl: NavController,
+              public navParams: NavParams,
+              public global: GlobalProvider) {
+    //this.userinfo = navParams.get('userinfo');
+    this.global.global_user_info = navParams.get('userinfo');
+    //console.log(this.userinfo);
+    console.log(this.global.global_user_info);
+    //this.pics = this.userinfo.pics;
+    this.pics = this.global.global_user_info;
     console.log(`Pics: ${this.pics}`)
     for (let pic of this.pics) {
       console.log(`Pic: ${pic}`)
