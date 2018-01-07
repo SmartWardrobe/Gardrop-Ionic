@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import {ToastController} from "ionic-angular";
 import { Http } from '@angular/http'; 
+import { GlobalProvider } from "../../providers/global/global";
+
 @IonicPage()
 @Component({
   selector: 'page-photoproperties',
@@ -14,7 +16,8 @@ export class PhotopropertiesPage {
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
               private readonly http: Http,
-              private readonly toastCtrl: ToastController) {
+              private readonly toastCtrl: ToastController,
+              public global: GlobalProvider) {
                 this.filename = navParams.get('filename');
   }
   updatePhotoProperties() {
