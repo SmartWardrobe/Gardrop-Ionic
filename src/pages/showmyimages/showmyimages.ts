@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { Http } from '@angular/http';
+import { ToastController } from "ionic-angular";
 import { GlobalProvider } from "../../providers/global/global";
 import { PhotouploadPage } from '../photoupload/photoupload';
 import { WeatherserviceProvider } from '../../providers/weatherservice/weatherservice';
@@ -16,11 +18,15 @@ export class ShowmyimagesPage {
   weatherType:any;
   weatherDegree:any;
   iconType:any;
+  result: any;
 
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
               public global: GlobalProvider,
-              public weatherService: WeatherserviceProvider) {
+              public weatherService: WeatherserviceProvider,
+              public http: Http,
+              private readonly toastCtrl: ToastController) {
+    this.http = http;
     console.log(this.global.user_info);
     this.pics = this.global.user_info.pics;
     for (let pic of this.pics) {
@@ -61,5 +67,34 @@ export class ShowmyimagesPage {
     }else if(this.weatherType === 'Mist'){
       this.iconType="ios-barcode-outline";
     }
+  }
+
+  deletePhoto(pic: any) {
+    let link = `https://gardrop-api.herokuapp.com/v1/pic/${pic.filename}`;
+    console.log(link);
+    this.http.delete(link)
+      .map(res => res.json())
+      .subscribe(data => {
+        this.result = data["content"]; //json donuyor
+        if(data["status"]==="okey"){
+          this.showToast(this.result);
+          this.remove(this.global.user_info.pics, pic)
+        }
+      }, error => {
+        this.showToast("Silinemiyor.");
+        console.log("Oooops!");
+      });
+  }
+  private showToast(content: string) {
+    const toast = this.toastCtrl.create({
+      message: content,
+      duration: 3000,
+      position: 'top'
+    });
+    toast.present();
+  }
+  private remove(array, element) {
+    const index = array.indexOf(element);
+    array.splice(index, 1);
   }
 }

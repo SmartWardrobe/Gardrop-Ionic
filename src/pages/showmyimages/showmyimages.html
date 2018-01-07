@@ -14,7 +14,7 @@
           <ion-col col-6 col-md-4 col-xl-3 *ngFor="let pic of pics" >
             <div class="image-container">
                 <img src="https://gardrop-api.herokuapp.com/v1/pic/{{pic.filename}}">
-                <button  class = "small_button" color="dark" (click)="openCombinePage()" >Kıyafeti Sil</button>
+                <button  class = "small_button" color="dark" (click)="deletePhoto(pic)" >Kıyafeti Sil</button>
             </div>
           </ion-col>
         </ion-row>
