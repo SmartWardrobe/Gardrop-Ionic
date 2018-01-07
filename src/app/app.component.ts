@@ -6,11 +6,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { WelcomePage } from '../pages/welcome/welcome';
 import { LoginPage } from  '../pages/login/login';
 import { SignupPage } from '../pages/signup/signup';
-import { ShowimagesPage } from '../pages/showimages/showimages';
 import { ShowmyimagesPage  } from '../pages/showmyimages/showmyimages';
 import { PhotouploadPage } from '../pages/photoupload/photoupload';
 import { PhotopropertiesPage } from '../pages/photoproperties/photoproperties';
-
 import { WeatherPage } from '../pages/weather/weather';
 
 import { WeatherserviceProvider } from '../providers/weatherservice/weatherservice';
@@ -19,7 +17,7 @@ import { WeatherserviceProvider } from '../providers/weatherservice/weatherservi
   templateUrl: 'app.html'
 })
 export class MyApp {
-  //public userinfo:any = {};
+  
   weatherType:any;
   iconType:any;
   temp:any; //havadurumu
@@ -37,13 +35,12 @@ export class MyApp {
 
     // used for an example of ngFor and navigation
     this.pages = [
-      { title: 'Home Page', component: WelcomePage },      
+      { title: 'Anasayfa', component: WelcomePage },     
+      { title: 'Gardrobum', component:ShowmyimagesPage}, 
       { title: 'Login', component: LoginPage },
       { title: 'Signup', component: SignupPage },
-      { title: 'My Gardrop', component:ShowimagesPage},
       { title: 'Show Weather', component:WeatherPage},
-      { title: 'Dress Upload Debug', component:PhotouploadPage},
-      { title: 'My Images', component:ShowmyimagesPage},
+      { title: 'Kıyafet Yükle', component:PhotouploadPage},
       { title: 'Kıyafet Özellikleri', component:PhotopropertiesPage }
     ];
     this.getWeather();
@@ -79,16 +76,12 @@ export class MyApp {
 
   initializeApp() {
     this.platform.ready().then(() => {
-      // Okay, so the platform is ready and our plugins are available.
-      // Here you can do any higher level native things you might need.
       this.statusBar.styleDefault();
       this.splashScreen.hide();
     });
   }
 
   openPage(page) {
-    // Reset the content nav to have just this page
-    // we wouldn't want the back button to show in this scenario
     this.nav.setRoot(page.component);
   }
 }

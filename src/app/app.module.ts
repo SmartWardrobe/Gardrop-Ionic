@@ -7,11 +7,9 @@ import {IonicImageViewerModule } from 'ionic-img-viewer';
 
 import { MyApp } from './app.component';
 import { WelcomePage } from '../pages/welcome/welcome';
-import { ListPage } from '../pages/list/list';
 import { LoginPage } from '../pages/login/login';
 import { SignupPage } from '../pages/signup/signup';
 import { PhotouploadPage } from '../pages/photoupload/photoupload';
-import { ShowimagesPage } from '../pages/showimages/showimages';
 import { ShowmyimagesPage  } from '../pages/showmyimages/showmyimages';
 import { PhotopropertiesPage } from '../pages/photoproperties/photoproperties';
 import { WeatherPage } from '../pages/weather/weather';
@@ -34,10 +32,8 @@ import { GlobalProvider } from '../providers/global/global';
   declarations: [
     MyApp,
     WelcomePage,
-    ListPage,
     LoginPage,
     SignupPage,
-    ShowimagesPage,
     ShowmyimagesPage,
     PhotouploadPage,
     WeatherPage,
@@ -53,11 +49,9 @@ import { GlobalProvider } from '../providers/global/global';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    WelcomePage,
-    ListPage,
+    WelcomePage,    
     LoginPage,
     SignupPage,
-    ShowimagesPage,
     ShowmyimagesPage,
     PhotouploadPage,
     WeatherPage,
