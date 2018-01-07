@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Http, Headers, RequestOptions } from '@angular/http'; 
 import { ShowmyimagesPage } from '../showmyimages/showmyimages';
+import { GlobalProvider } from "../../providers/global/global";
+
 
 @IonicPage()
 @Component({
@@ -11,8 +13,11 @@ import { ShowmyimagesPage } from '../showmyimages/showmyimages';
 export class LoginPage {
   data:any = {};
   userinfo:any = {};
-
-  constructor(public navCtrl: NavController, public navParams: NavParams, public http: Http) {
+//this.global.myGlobalVar="setting global val"
+  constructor(public navCtrl: NavController,
+              public navParams: NavParams,
+              public http: Http,
+              public global: GlobalProvider) {
     this.data.email = '';
     this.data.password = '';
 
@@ -36,14 +41,16 @@ export class LoginPage {
       .map(res => res.json())
       .subscribe(data => {
         this.data.response = data["status"]; // 200 donduruyor
-        this.userinfo=data["data"];
+       // this.userinfo=data["data"];
+       this.global.global_user_info=data["data"];
         console.log(data);
         if (this.data.response === 200){
           this.data.response="Giriş Başarılı";
         }
         //yeni sayfaya yonlendirecek...
         this.navCtrl.push(ShowmyimagesPage, {
-          userinfo: this.userinfo
+          //userinfo: this.userinfo
+          userinfo:this.global.global_user_info
         });
       },error => {
           console.log("Erorrr!");
