@@ -77,7 +77,7 @@ export class ShowmyimagesPage {
       .subscribe(data => {
         this.result = data["content"]; //json donuyor
         if(data["status"]==="okey"){
-          this.showToast(this.result);
+          this.showToast("Kıyafet Gardroptan Kaldırıldı");
           this.remove(this.global.user_info.pics, pic)
         }
       }, error => {
