@@ -8,8 +8,6 @@ import { LoginPage } from  '../pages/login/login';
 import { SignupPage } from '../pages/signup/signup';
 import { ShowmyimagesPage  } from '../pages/showmyimages/showmyimages';
 import { PhotouploadPage } from '../pages/photoupload/photoupload';
-import { PhotopropertiesPage } from '../pages/photoproperties/photoproperties';
-import { WeatherPage } from '../pages/weather/weather';
 
 import { WeatherserviceProvider } from '../providers/weatherservice/weatherservice';
 
@@ -39,9 +37,7 @@ export class MyApp {
       { title: 'Gardrobum', component:ShowmyimagesPage}, 
       { title: 'Login', component: LoginPage },
       { title: 'Signup', component: SignupPage },
-      { title: 'Show Weather', component:WeatherPage},
-      { title: 'Kıyafet Yükle', component:PhotouploadPage},
-      { title: 'Kıyafet Özellikleri', component:PhotopropertiesPage }
+      { title: 'Kıyafet Yükle', component:PhotouploadPage}
     ];
     this.getWeather();
     this.getWeatherType();
