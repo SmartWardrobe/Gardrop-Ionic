@@ -19,7 +19,7 @@ export class PhotopropertiesPage {
   }
   updatePhotoProperties() {
     let myPhotoData = {
-      "photoname" : this.filename,
+      "filename" : this.filename,
       "color" : this.photocolor
     };
     this.http.put("https://gardrop-api.herokuapp.com/v1/pic", myPhotoData)
