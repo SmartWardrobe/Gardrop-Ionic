@@ -1,6 +1,9 @@
 <ion-header>
-      <ion-title>Gardrobum </ion-title>
-      <h5 align="right">{{weatherDegree | number:0}}°  <ion-icon name="{{iconType}}"></ion-icon> </h5>   
+  <ion-row>
+    <ion-title>Gardrobum </ion-title>
+    <h5 align="right" margin-right="5dp">{{weatherDegree | number:0}}°  <ion-icon name="{{iconType}}"></ion-icon> </h5>
+  </ion-row>
+         
 </ion-header>
   
   <ion-content>
@@ -16,8 +19,16 @@
         </ion-row>
       </ion-grid>
     </div>
-    <ion-footer>
-      <button ion-button block color="dark" (click)="openPhotouploadPage()" >Kıyafet ekle</button>
-    </ion-footer> 
   </ion-content>
+  <ion-footer>
+  <ion-grid>
+    <ion-row>
+        <button ion-button block color="dark" (click)="openPhotouploadPage()" >Kıyafet ekle</button>
+    </ion-row>
+    <ion-row>
+        <button ion-button block color="dark" (click)="openCombinePage()" >Kombinle</button>
+    </ion-row>
+  </ion-grid>
+</ion-footer>
+
   

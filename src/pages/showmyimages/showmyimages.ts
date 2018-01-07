@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { GlobalProvider } from "../../providers/global/global";
 import { PhotouploadPage } from '../photoupload/photoupload';
 import { WeatherserviceProvider } from '../../providers/weatherservice/weatherservice';
+import { CombinePage } from '../combine/combine';
 
 @IonicPage()
 @Component({
@@ -30,6 +31,9 @@ export class ShowmyimagesPage {
 
   openPhotouploadPage(){
     this.navCtrl.push(PhotouploadPage);
+  }
+  openCombinePage(){
+    this.navCtrl.push(CombinePage);
   }
 
   ionViewDidLoad() {
