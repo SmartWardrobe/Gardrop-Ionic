@@ -3,14 +3,13 @@ page-showmyimages {
         background-size: cover;
         min-height: 200px;
     }
-    /*
-    Gercek fotograflar ile test edilecek
-    ion-slide.swiper-slide{
-        left: 25%;
-    }
 
-    */
     .thumb-img {
         padding: 10px;
+    }
+    .small_button{
+        line-height: 5px !important;
+        min-height: 24px !important;
+        width:100%;
     }
 }
