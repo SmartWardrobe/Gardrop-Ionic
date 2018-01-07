@@ -12,6 +12,7 @@ import { GlobalProvider } from "../../providers/global/global";
 })
 export class LoginPage {
   data:any = {};
+  login_result:string;
 //this.global.myGlobalVar="setting global val"
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
@@ -43,10 +44,12 @@ export class LoginPage {
         this.global.user_info = data["data"];
         console.log(data);
         if (this.data.response === 200){
-          this.data.response="Giriş Başarılı";
+          //this.data.response="Giriş Başarılı";
+          this.login_result="Giriş Başarılı";
         }
-        //yeni sayfaya yonlendirecek...
         this.navCtrl.push(ShowmyimagesPage);
+        //yeni sayfaya yonlendirecek...
+        
       },error => {
           console.log("Erorrr!");
       });

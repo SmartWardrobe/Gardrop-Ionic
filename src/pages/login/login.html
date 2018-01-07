@@ -13,10 +13,10 @@
 <ion-content padding>
     <ion-card>
         <ion-item>
-            <ion-input [(ngModel)]="data.email" type="text" placeholder="Email"></ion-input>
+            <ion-input [(ngModel)]="data.email" type="text" placeholder="Email" required></ion-input>
         </ion-item>   
         <ion-item>
-            <ion-input [(ngModel)]="data.password" type="password" placeholder="Parola"></ion-input>
+            <ion-input [(ngModel)]="data.password" type="password" placeholder="Parola" required></ion-input>
         </ion-item>
           <a>Parolanı mı unuttun? <b>Haydi bu sorunu çözelim. </b></a>
         <button ion-button block color="blue" (click)="login()">Giris Yap</button>
@@ -24,6 +24,6 @@
         <button ion-button block color="facebook">
           <ion-icon name="logo-facebook"></ion-icon> Facebook ile Giris
         </button>
-        <h5 align="center">{{data.response}}</h5>
+        <h5 align="center">{{login_result}}</h5>
     </ion-card>
 </ion-content>
