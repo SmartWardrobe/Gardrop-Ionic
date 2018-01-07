@@ -22,6 +22,7 @@ export class CombinePage {
               public navParams: NavParams,
               private readonly http: Http,
               public global: GlobalProvider) {
+    this.loadCombine();
   }
 
   loadCombine() {
@@ -30,8 +31,9 @@ export class CombinePage {
     this.http.get(link)
       .map(res => res.json())
       .subscribe(data => {
-        this.result.status = data["status"]; // 200 donduruyor
-        this.result.data = data["data"];
+        this.result = data; // 200 donduruyor
+        this.photobottom = data["bottom"];
+        this.phototop = data["top"];
         console.log(this.result);
       },error => {
         console.log("Erorrr!");
