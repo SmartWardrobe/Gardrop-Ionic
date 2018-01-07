@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import {ToastController} from "ionic-angular";
 import { Http } from '@angular/http'; 
+import { ShowmyimagesPage } from '../showmyimages/showmyimages';
 import { GlobalProvider } from "../../providers/global/global";
 
 @IonicPage()
@@ -33,9 +34,11 @@ export class PhotopropertiesPage {
       .subscribe(data => {
         this.global.user_info.pics = data['pics'];
         this.stringpics = JSON.stringify(data['pics']);
-        this.showToast(`updated.Pics: ${this.stringpics}`);
+        this.showToast("Gardroba Eklendi");
+        this.navCtrl.push(ShowmyimagesPage);
       });
   }
+  
   private showToast(content: string) {
     const toast = this.toastCtrl.create({
       message: content,
