@@ -11,21 +11,21 @@
 </ion-header>
 
 <ion-content padding class="background">
-    <ion-card class="card">
-        <ion-item>
-            <ion-input [(ngModel)]="data.email" type="text" placeholder="E-posta" required></ion-input>
-        </ion-item>   
-        <ion-item>
-            <ion-input [(ngModel)]="data.password" type="password" placeholder="Parola" required></ion-input>
-        </ion-item>
-        <ion-item>
-        <b><a style="color:facebook" href="#">Parolanı mı unuttun?</a></b>
-        <button ion-button block color="blue" (click)="login()">Giriş Yap</button>
-        <p align="center">YA DA</p>
-        <button ion-button block color="facebook">
-          <ion-icon name="logo-facebook"></ion-icon>   Facebook ile Giriş
-        </button>
-        <h5 align="center">{{login_result}}</h5>
-        </ion-item>
-    </ion-card>
+        <ion-card class="card">
+            <ion-item>
+                <ion-input [(ngModel)]="data.email" type="text" placeholder="E-posta" required></ion-input>
+            </ion-item>   
+            <ion-item>
+                <ion-input [(ngModel)]="data.password" type="password" placeholder="Parola" required></ion-input>
+            </ion-item>
+            <ion-item>
+            <b><a style="color:facebook" href="#">Parolanı mı unuttun?</a></b>
+            <button ion-button block color="blue" (click)="login()">Giriş Yap</button>
+            <p align="center">YA DA</p>
+            <button ion-button block color="facebook">
+              <ion-icon name="logo-facebook"></ion-icon>   Facebook ile Giriş
+            </button>
+            <h5 align="center">{{login_result}}</h5>
+            </ion-item>
+        </ion-card>  
 </ion-content>
