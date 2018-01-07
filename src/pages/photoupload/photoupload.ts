@@ -92,7 +92,7 @@ export class PhotouploadPage {
       .subscribe(data => {
         this.filename = data['filename'];
         this.result = JSON.stringify(data);
-        this.showToast(this.result);
+        //this.showToast(this.result);
         this.navCtrl.push(PhotopropertiesPage, {
           filename: this.filename
         });
