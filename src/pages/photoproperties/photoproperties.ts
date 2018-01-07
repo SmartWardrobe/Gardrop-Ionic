@@ -14,7 +14,6 @@ export class PhotopropertiesPage {
   public photocolor:string;
   public filename: string;
   public type: string;
-  public stringpics: string;
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
               private readonly http: Http,
@@ -33,7 +32,6 @@ export class PhotopropertiesPage {
       .map(res => res.json())
       .subscribe(data => {
         this.global.user_info.pics = data['pics'];
-        this.stringpics = JSON.stringify(data['pics']);
         this.showToast("Gardroba Eklendi");
         this.navCtrl.push(ShowmyimagesPage);
       });
