@@ -1,4 +1,4 @@
-# Ionic-Gardrop
+# SmartWardrobe Mobile App - Ionic
 
 This is a starter template for [Ionic](http://ionicframework.com/docs/) projects.
 
@@ -59,11 +59,3 @@ https://github.com/matiastucci/ionic-ocr-example
   `Procfile` ve `server.js` dosyalari heroku icin kullaniliyoruz.
   
   Baska repo olusturuldugun 2 dosyanin tasinmasi gerekli ve heroku da otomatik deploy ayarlanmali.
-  
-# Gardrop Uygulamasinin repolari
-
-Projenin Ionic reposu: https://github.com/erginipekci7/Gardrop-Ionic
-
-Projenin Api reposi:  https://github.com/erginipekci7/api-flask
-
-Projenin Api Test reposu : https://github.com/erginipekci7/api-flask-test
